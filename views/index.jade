@@ -3,6 +3,13 @@ extends layout
 block content
   #page-content-wrapper
     .page-content.inset
+        if (!user)
+            a(href="/login") Login
+            br
+            a(href="/register") Register
+        if (user)
+            p You are currently logged in as #{user.username}
+            a(href="/logout") Logout
       .row
         a#menu-toggle.btn.btn-default(href='#')
           i.fa.fa-bars
